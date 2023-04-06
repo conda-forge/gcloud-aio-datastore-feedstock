@@ -1,5 +1,5 @@
 {% set name = "gcloud-aio-datastore" %}
-{% set version = "7.3.0" %}
+{% set version = "7.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: dad2ea1f09e64a2ac07ccf191f0cc10fe6645c5e5dca880f48023a9a0b750986
+  sha256: de17d687c6bfea93a9d1dab00d4c2b0533e7d5388c04bdc3591461270fc5bccd
 
 build:
   noarch: python
