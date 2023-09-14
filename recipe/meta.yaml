@@ -1,13 +1,13 @@
 {% set name = "gcloud-aio-datastore" %}
-{% set version = "7.4.0" %}
+{% set version = "8.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: cda62d551a48226c67176dce1e7bf70db734592ab069b56665bc9785a96bceed
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gcloud_aio_datastore-{{ version }}.tar.gz
+  sha256: ea990ce809ccf44b854dcfde467528c3dff8497a0a2cce909757e13ed85bf12a
 
 build:
   noarch: python
@@ -16,13 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.7,<4.0
-    - pip
+    - python >=3.8,<4.0
     - poetry-core >=1.0.0
+    - pip
   run:
-    - python >=3.7,<4.0
-    - gcloud-aio-auth >=3.1.0,<5.0.0
-    - setuptools >=66.0.0,<67.0.0
+    - python >=3.8,<4.0
+    - gcloud-aio-auth >=3.1.0,<6.0.0
 
 test:
   imports:
