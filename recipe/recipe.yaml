@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  name: gcloud-aio-datastore
+  version: 9.1.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/gcloud_aio_datastore-${{ version }}.tar.gz
+  sha256: cd9d35e616ffc14e3038f3efad7ad8c30bfcb3696bbc211809bf7dfb8f10da45
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - poetry-core >=1.0.0
+    - pip
+  run:
+    - python >=${{ python_min }},<4.0
+    - gcloud-aio-auth >=3.1.0,<6.0.0
+
+tests:
+  - python:
+      imports:
+        - gcloud.aio.datastore
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pip
+    script:
+      - pip check
+
+about:
+  summary: Python Client for Google Cloud Datastore
+  license: MIT
+  license_file: LICENSE.txt
+  homepage: https://github.com/talkiq/gcloud-aio
+
+extra:
+  recipe-maintainers:
+    - xylar
