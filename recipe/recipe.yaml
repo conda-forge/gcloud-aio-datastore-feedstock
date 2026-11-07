@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: gcloud-aio-datastore
-  version: "9.2.2"
+  version: "9.3.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/gcloud_aio_datastore-${{ version }}.tar.gz
-  sha256: dc624b4f67f8fde9867615d3c3342224685a9c565ac5b0e6efa23be54dbddfe9
+  sha256: 3406233b67016045371e237fc67f13f5f7ff7a685c13e048c3f309544fa102c7
 
 build:
   number: 0
